@@ -1,0 +1,28 @@
+{
+  "name": "oauth",
+  "version": "1.0.0",
+  "description": "Project",
+  "main": "app.js",
+  "author": "Muzammil",
+  "license": "ISC",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "cookie-session": "^1.3.2",
+    "express": "^4.16.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^4.12.0",
+    "mysql2": "^2.0.0",
+    "node-schedule": "^2.0.0",
+    "nodemailer": "^6.3.1",
+    "passport": "^0.5.0",
+    "passport-google-oauth20": "^2.0.0",
+    "sequelize": "^5.21.2",
+    "swagger-jsdoc": "^3.4.0",
+    "swagger-ui-express": "^4.0.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
