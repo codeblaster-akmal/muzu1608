@@ -1,7 +1,7 @@
 {
-  "name": "oauth",
+  "name": "Task-01",
   "version": "1.0.0",
-  "description": "Project",
+  "description": "Employee attendance",
   "main": "app.js",
   "author": "Muzammil",
   "license": "ISC",
