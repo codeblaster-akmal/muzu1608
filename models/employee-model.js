@@ -18,10 +18,7 @@ module.exports = (sequelize, { DataTypes, Model }) => {
                 },
             },
         },
-        password: {
-            type: DataTypes.STRING,
-        },
-        googleId: {
+        facebookId: {
             type: DataTypes.STRING,
         },
     },

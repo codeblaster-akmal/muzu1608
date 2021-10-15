@@ -84,8 +84,8 @@ This is an example of how to list things you need to use the software and how to
    ```JS
   PORT=<<3000>>
   JWT_SECRET_KEY=<<jwtsecretkey>>
-  CLIENT_ID=<<google-developer-console-auth20-clientID>>
-  CLIENT_SECRET=<<google-developer-console-auth20-clientSecret>>
+  CLIENT_ID=<<facebook-developer-console-auth20-clientID>>
+  CLIENT_SECRET=<<facebook-developer-console-auth20-clientSecret>>
 
   DATABASE_HOST=<<localhost>>
   DATABASE_PORT=<<3306>>

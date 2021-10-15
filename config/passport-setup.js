@@ -1,7 +1,7 @@
 "use strict";
 
 const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 const { generateJwtToken } = require('../middleware/jwt');
 const db = require("./db");
 require("dotenv").config();
@@ -9,17 +9,18 @@ require("dotenv").config();
 const { CLIENT_ID, CLIENT_SECRET } = process.env;
 
 passport.use(
-    new GoogleStrategy({
-        // options for google strategy
+    new FacebookStrategy({
+        // options for facebook strategy
         clientID: CLIENT_ID,
         clientSecret: CLIENT_SECRET,
-        callbackURL: '/auth/google/redirect'
+        callbackURL: '/auth/facebook/redirect',
+        profileFields: ['id', 'email']
     }, async (accessToken, refreshToken, profile, done) => {
 
         let employee = await db.employees.findOne({
             where: {
                 [db.Sequelize.Op.or]: [
-                    { googleId: profile.id },
+                    { facebookId: profile.id },
                     { email: profile.emails[0].value },
                 ]
             }
@@ -28,7 +29,7 @@ passport.use(
         if (!employee) {
             // if not, create employee in our db
             const payload = {
-                googleId: profile.id,
+                facebookId: profile.id,
                 email: profile.emails[0].value,
             };
 
