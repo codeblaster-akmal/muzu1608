@@ -10,7 +10,7 @@
     <a><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="http://localhost:3000/">View Demo</a>
+    <a href="http://localhost:3000/api-docs">View Demo</a>
     ·
     <a>Report Bug</a>
     ·
