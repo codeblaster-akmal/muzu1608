@@ -27,8 +27,9 @@ db.sequelize = sequelize;
 
 // Models
 db.employees = require("../models/employee-model")(sequelize, Sequelize);
+db.employee_tracks = require("../models/employeeTrack-model")(sequelize, Sequelize);
 
 // All association will go here...
-
+db.employees.hasMany(db.employee_tracks, { onDelete: 'RESTRICT', onUpdate: 'RESTRICT' });
 
 module.exports = db;

@@ -1,21 +1,16 @@
 <!-- PROJECT LOGO -->
 
-![Logo](https://www.gold-bank.co.uk/_ui/themes/gold/media/logo-primary.png)
-
 <p align="center">
-  <!-- <a href="http://192.168.1.23/iwayy/goldbank2.0/goldbankbe.git">
-    <img src="public/images/logo/logo.png" alt="Logo" width="80" height="80">
-  </a> -->
 
-  <h3 align="center">Gold Bank Backend Server</h3>
+  <h3 align="center">Employee attendence Server</h3>
 
   <p align="center">
-    Gold bank E-commerce projects!
+    Employee attendence projects!
     <br />
     <a><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="http://localhost:4000/">View Demo</a>
+    <a href="http://localhost:3000/">View Demo</a>
     ·
     <a>Report Bug</a>
     ·
@@ -79,27 +74,25 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Clone the repo
-   ```sh
-   git clone http://192.168.1.23/iwayy/goldbank2.0/goldbankbe.git
-   ```
+1. After extracting zip.
+
 2. Install NPM packages
    ```sh
    npm install
    ```
 3. Enter your SERVER & DB Info in `.env`
    ```JS
-    PORT=6060
+  PORT=<<3000>>
+  JWT_SECRET_KEY=<<jwtsecretkey>>
+  CLIENT_ID=<<google-developer-console-auth20-clientID>>
+  CLIENT_SECRET=<<google-developer-console-auth20-clientSecret>>
 
-  ACCESS_TOKEN_SECRET=secret_key
-  REFRESH_TOKEN_SECRET=secret_key
-  DATABASE_HOST=localhost
-  DATABASE_PORT=3306
-  DATABASE_USERNAME=root
-  DATABASE_PASSWORD=
-  DATABASE_NAME=goldbank
-  DATABASE_REFRESH=0      
-  DATABASE_RUN_SEED=0
+  DATABASE_HOST=<<localhost>>
+  DATABASE_PORT=<<3306>>
+  DATABASE_USERNAME=<<root>>
+  DATABASE_PASSWORD=<<password>>
+  DATABASE_NAME=<<test>>
+  DATABASE_REFRESH=<<0>>
    ```
 4. Run project
    ```sh
@@ -107,8 +100,6 @@ This is an example of how to list things you need to use the software and how to
    ```
 
 ## Tech Stack
-
-**Client:** React.
 
 **Server:** Node, Express.
 
@@ -121,4 +112,5 @@ This is an example of how to list things you need to use the software and how to
 <!-- CONTACT -->
 ## Contact
 
-Project Link: [http://192.168.1.23/iwayy/goldbank2.0/goldbankbe.git](http://192.168.1.23/iwayy/goldbank2.0/goldbankbe.git)
+**Contact:** 8124959504.
+**Email-id:** muzzu1608@gmail.com.

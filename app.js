@@ -6,6 +6,7 @@ const config = require("./config/configurations");
 const db = require("./config/db");
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+const { errorHandler } = require('./helpers/dbErrorHandler');
 require("dotenv").config();
 
 const app = express();
@@ -14,16 +15,15 @@ const swaggerOptions = {
     swaggerDefinition: {
         info: {
             version: "1.0.0",
-            title: "Customer API",
-            description: "Customer API Information",
+            title: "Employee API",
+            description: "Employee API Information",
             contact: {
-                name: "Amazing Developer"
+                name: "Muzammil Developer"
             },
-            servers: ["http://localhost:5000"]
+            servers: [`http://localhost:${config.port}`]
         }
     },
-    // ['.routes/*.js']
-    apis: ['./routes/*.js']
+    apis: ['app.js', './routes/*.js']
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
@@ -43,24 +43,23 @@ app.use('/employee', employeeRoutes);
 app.use((error, req, res, next) => {
     console.log(`SERVER ERROR: ${error.stack}`);
     res.status(400).json({
-        error: error,
+        error: errorHandler(error),
     });
 });
 
-// create home route
 /**
  * @swagger
  * /:
  *  get:
- *    description: Server test request
+ *    description: Server test request EMPLOYEE_ATTENDENCE_SERVER
  *    responses:
  *      '200':
- *        description: A successful response
+ *        description: A successful response get application name, status and date
  */
 app.get('/', (req, res, next) => {
     try {
         res.status(200).json({
-            'applicationName': 'TEST_SERVER',
+            'applicationName': 'EMPLOYEE_ATTENDENCE_SERVER',
             'status': 'Up',
             'date': new Date()
         });

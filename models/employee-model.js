@@ -11,6 +11,12 @@ module.exports = (sequelize, { DataTypes, Model }) => {
                 args: true,
                 msg: 'Employee with this email-id already exist'
             },
+            validate: {
+                isEmail: {
+                    args: true,
+                    msg: 'Invalid email-id'
+                },
+            },
         },
         password: {
             type: DataTypes.STRING,
@@ -19,7 +25,7 @@ module.exports = (sequelize, { DataTypes, Model }) => {
             type: DataTypes.STRING,
         },
     },
-        { sequelize, modelName: "employee" }
+        { sequelize, modelName: "employee", timestamps: false }
     );
     return Employee;
 };
